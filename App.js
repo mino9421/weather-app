@@ -7,7 +7,8 @@ import {
   ImageBackground, 
   useWindowDimensions,
   StatusBar,
-  Animated
+  Animated,
+  TouchableOpacity
 
 } from 'react-native';
 
@@ -19,6 +20,9 @@ import MoonIcon from './assets/moon.svg'
 import RainIcon from './assets/moon.svg'
 import MenuIcon from './assets/menu.svg'
 import SearchIcon from './assets/search.svg'
+
+import { getStatusBarHeight } from 'react-native-status-bar-height';
+
 
 const WeatherIcon = (weatherType) => {
   if(weatherType === 'Sunny') {
@@ -115,18 +119,42 @@ export default function App() {
                   <View style={styles.bottomInfoWrapper}>
                     <View style={{alignItems: 'center'}}>
                       <Text style={styles.info}>Wind</Text>
-                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
+                      <Text style={[styles.info, {fontSize: 24}]}>{location.wind}</Text>
                       <Text style={styles.info}>km/h</Text>
+                      <View style={styles.infoBar}>
+                        <View style={{
+                          width: location.wind / 2,
+                          height: 5,
+                          backgroundColor: '#66FFF4'
+                          }} 
+                        />
+                      </View>
                     </View>
                     <View style={{alignItems: 'center'}}>
-                      <Text style={styles.info}>Wind</Text>
-                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
-                      <Text style={styles.info}>km/h</Text>
+                      <Text style={styles.info}>Rain</Text>
+                      <Text style={[styles.info, {fontSize: 24}]}>{location.rain}</Text>
+                      <Text style={styles.info}>%</Text>
+                      <View style={styles.infoBar}>
+                        <View style={{
+                          width: location.rain / 2,
+                          height: 5,
+                          backgroundColor: '#F44336'
+                          }} 
+                        />
+                      </View>
                     </View>
                     <View style={{alignItems: 'center'}}>
-                      <Text style={styles.info}>Wind</Text>
-                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
-                      <Text style={styles.info}>km/h</Text>
+                      <Text style={styles.info}>Humidity</Text>
+                      <Text style={[styles.info, {fontSize: 24}]}>{location.humidity}</Text>
+                      <Text style={styles.info}>%</Text>
+                      <View style={styles.infoBar}>
+                        <View style={{
+                          width: location.humidity / 2,
+                          height: 5,
+                          backgroundColor: '#F44336'
+                          }} 
+                        />
+                      </View>
                     </View>
                   </View>
                 </View>
@@ -135,6 +163,15 @@ export default function App() {
           );
         })}
       </ScrollView>
+
+      <View style={styles.Header}>
+        <TouchableOpacity onPress={() => {}}>
+          <SearchIcon width={24} height={24} fill='#fff' />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <MenuIcon width={24} height={24} fill='#fff' />
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.indicatorWrapper}>
         {Locations.map((location, index) => {
@@ -215,5 +252,19 @@ const styles = StyleSheet.create({
   info: {
     color: '#fff', fontSize: 14
   },
-  
+  infoBar: {
+    width: 45,
+    height: 5,
+    backgroundColor: 'rgba(255,255,255,0.5)'
+  },
+  Header: {
+    position: 'absolute',
+    top: 0,
+    width: '100%',
+    height: getStatusBarHeight() + 40,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingHorizontal: 20
+  }
 });
