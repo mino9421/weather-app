@@ -15,7 +15,9 @@ import Locations from './model/locations'
 
 export default function App() {
 
+  // grabs the screen dimensions for the device
   const {width: windowWidth, height: windowHeight} = useWindowDimensions();
+  // scrolling mechanic
   const scrollX = useRef( new Animated.Value(0) ).current;
   
   return (
