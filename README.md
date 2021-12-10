@@ -1,5 +1,7 @@
-# Weather Mobile App
-## Using React-Native 
+Weather Mobile App
+==================
+Using React-Native 
+------------------
 ### Group Members
 * Armen Levon Armen - 101-281-931
 * Mondi - 
