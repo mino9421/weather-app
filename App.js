@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import { StyleSheet,
+import { 
+  StyleSheet,
   View,  
   Text,
   ScrollView, 
@@ -12,6 +13,27 @@ import { StyleSheet,
 
 import Locations from './model/locations'
 
+import SunIcon from './assets/sun.svg'
+import CloudIcon from './assets/cloudy.svg'
+import MoonIcon from './assets/moon.svg'
+import RainIcon from './assets/moon.svg'
+import MenuIcon from './assets/menu.svg'
+import SearchIcon from './assets/search.svg'
+
+const WeatherIcon = (weatherType) => {
+  if(weatherType === 'Sunny') {
+    return <SunIcon width={34} height={34} fill="#fff" />
+  }
+  if(weatherType === 'Rainy') {
+    return <RainIcon width={34} height={34} fill="#fff" />
+  }
+  if(weatherType === 'Cloudy') {
+    return <CloudIcon width={34} height={34} fill="#fff" />
+  }
+  if(weatherType === 'Night') {
+    return <MoonIcon width={34} height={34} fill="#fff" />
+  }
+}
 
 export default function App() {
 
@@ -64,10 +86,49 @@ export default function App() {
                   flex:1,
                   backgroundColor: 'rgba(0,0,0,0.3)', 
                   padding:20,
-                  justifyContent:'center',
-                  alignItems:'center'
                 }}>
-                  <Text style={{color:'white'}}>{location.city}</Text>
+                  <View style={styles.topInfoWrapper}>
+                    
+                    <View>
+                      <Text style={styles.city}>{location.city}</Text>
+                      <Text style={styles.time}>{location.dateTime}</Text>
+                    </View>
+
+                    <View>
+                      
+                      <Text style={styles.temperature}>{location.temperature}</Text>
+
+                      <View style={{flexDirection: 'row'}}>
+                        {WeatherIcon(location.weatherType)}
+                        <Text style={styles.weatherType}>{location.weatherType}</Text>
+                      </View>
+
+                    </View>
+
+                  </View>
+                  <View style={{
+                    backgroundColor: 'rgba(255,255,255,0.7',
+                    marginTop: 20,
+                    borderBottomWidth: 1,
+                    }}
+                  />
+                  <View style={styles.bottomInfoWrapper}>
+                    <View style={{alignItems: 'center'}}>
+                      <Text style={styles.info}>Wind</Text>
+                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
+                      <Text style={styles.info}>km/h</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Text style={styles.info}>Wind</Text>
+                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
+                      <Text style={styles.info}>km/h</Text>
+                    </View>
+                    <View style={{alignItems: 'center'}}>
+                      <Text style={styles.info}>Wind</Text>
+                      <Text style={styles.info, {fontSize: 24}}>{location.wind}</Text>
+                      <Text style={styles.info}>km/h</Text>
+                    </View>
+                  </View>
                 </View>
               </ImageBackground>
             </View>
@@ -116,14 +177,43 @@ const styles = StyleSheet.create({
     marginHorizontal: 4, 
     backgroundColor: '#fff'
     },
-    indicatorWrapper: {
-      position: 'absolute',
-      top: 140,
-      left: 20,
-      flexDirection: 'row',
-      justifyContent:'center',
-      alignItems:'center'
-    },
-
-
+  indicatorWrapper: {
+    position: 'absolute',
+    top: 140,
+    left: 20,
+    flexDirection: 'row',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  topInfoWrapper: {
+    flex: 1,
+    marginTop: 160,
+    justifyContent: 'space-between',
+  },
+  bottomInfoWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 20
+  },
+  city: {
+    color: '#fff',
+    fontSize: 30,
+  },
+  time: {
+    color: '#fff'
+  },
+  temperature: {
+    color: '#fff',
+    fontSize: 85,
+  },
+  weatherType: {
+    color: "#fff",
+    fontSize: 25,
+    lineHeight: 24,
+    marginLeft: 10
+  },
+  info: {
+    color: '#fff', fontSize: 14
+  },
+  
 });
