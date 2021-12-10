@@ -1,12 +1,12 @@
-Weather Mobile App
+Mobile Weather App
 ==================
-Using React-Native 
+Using React-Native
 ------------------
 ### Group Members
 * Armen Levon Armen - 101-281-931
-* Mondi - 
-* Deniz Dogan - 
-* Fred Knoestah - 
+* Mondi -
+* Deniz Dogan -
+* Fred Knoestah -
 #### External Dependencies Used
 * expo-status-bar
 * react-native-status-bar-height
