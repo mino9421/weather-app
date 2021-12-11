@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { 
   StyleSheet,
   View,  
@@ -22,7 +22,7 @@ import MenuIcon from './assets/menu.svg'
 import SearchIcon from './assets/search.svg'
 
 import { getStatusBarHeight } from 'react-native-status-bar-height';
-
+import * as Location from 'expo-location'
 
 const WeatherIcon = (weatherType) => {
   if(weatherType === 'Sunny') {
@@ -46,6 +46,7 @@ export default function App() {
   // scrolling mechanic
   const scrollX = useRef( new Animated.Value(0) ).current;
   
+
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -71,11 +72,11 @@ export default function App() {
           if( location.weatherType === 'Sunny') {
             bgImg = require('./assets/sunny.jpg')
           } else if (location.weatherType === "Night") {
-            bgImg = require('./assets/night2.jpg')
+            bgImg = require('./assets/night.jpg')
           } else if (location.weatherType === "Cloudy") {
-            bgImg = require('./assets/cloudy.jpeg')    // pay attention here this img extension is jpeg on jpg it will not work
+            bgImg = require('./assets/cloud3.jpg')    // pay attention here this img extension is jpeg on jpg it will not work
           } else if (location.weatherType === "Rainy") {
-            bgImg = require('./assets/rainy.jpg')
+            bgImg = require('./assets/rain2.jpg')
           }
 
           return (
