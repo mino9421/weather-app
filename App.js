@@ -111,42 +111,9 @@ export default function App() {
 
                     <View style={styles.weeklyInfoBar}>
                         <ScrollView
-                          horizontal={true}
+                          // horizontal={true}
                           showsHorizontalScrollIndicator={false}
                         >
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
-                          <Text>hello</Text>
                           <Text>hello</Text>
                           <Text>hello</Text>
                           <Text>hello</Text>
@@ -287,6 +254,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginVertical: 20,
   },
+  weeklyInfoBar: {
+    flex: 1,
+    paddingTop: 30,
+    backgroundColor: 'yellow',  
+  },
   city: {
     color: '#fff',
     fontSize: 30,
@@ -297,13 +269,13 @@ const styles = StyleSheet.create({
   temperature: {
     color: '#fff',
     fontSize: 85,
-    
+    paddingTop: 15,
   },
   weatherType: {
     color: "#fff",
     fontSize: 25,
     lineHeight: 24,
-    marginLeft: 10
+    marginLeft: 10,
   },
   info: {
     color: '#fff', fontSize: 14
