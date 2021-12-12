@@ -100,15 +100,68 @@ export default function App() {
                     </View>
 
                     <View>
-                      
                       <Text style={styles.temperature}>{location.temperature}</Text>
-
+                      
                       <View style={{flexDirection: 'row'}}>
                         {WeatherIcon(location.weatherType)}
                         <Text style={styles.weatherType}>{location.weatherType}</Text>
                       </View>
 
                     </View>
+
+                    <View style={styles.weeklyInfoBar}>
+                        <ScrollView
+                          horizontal={true}
+                          showsHorizontalScrollIndicator={false}
+                        >
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                          <Text>hello</Text>
+                        </ScrollView>
+                      </View>
 
                   </View>
                   <View style={{
@@ -226,12 +279,13 @@ const styles = StyleSheet.create({
   topInfoWrapper: {
     flex: 1,
     marginTop: 160,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
+    backgroundColor: 'blue'
   },
   bottomInfoWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 20
+    marginVertical: 20,
   },
   city: {
     color: '#fff',
@@ -243,6 +297,7 @@ const styles = StyleSheet.create({
   temperature: {
     color: '#fff',
     fontSize: 85,
+    
   },
   weatherType: {
     color: "#fff",
